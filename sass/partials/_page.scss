@@ -1,0 +1,113 @@
+@import "compass/css3";
+
+//-----------------------------------------------
+// The following html5-boilerplate styles should
+// probably be customized for each site
+//-----------------------------------------------
+body, select, input, textarea {
+  color: $font-color;
+  // Set your base font here, to apply evenly
+  // font-family: Georgia, serif;
+}
+
+//-----------------------------------
+// Add your own custom styles below
+//-----------------------------------
+
+$page-width: 960px;
+$left-margin: 210px;
+$right-margin: 36px;
+
+$symbol-tint: #00675E;
+
+$default-box-shadow-h-offset: 3px;
+$default-box-shadow-v-offset: 3px;
+$default-box-shadow-blur: 10px;
+
+body {
+    background-color: #F5F1E9;
+}
+
+a {
+    color: $symbol-tint;
+    $hover-color: desaturate(lighten($symbol-tint, 20%), 50%);
+    text-decoration: none;
+    &:visited {
+        color: darken($symbol-tint, 10%); 
+        &:hover {
+            color: $hover-color;
+            border-bottom:1px dashed $hover-color;
+        }
+    }
+    &:hover {
+        color: $hover-color;
+        border-bottom:1px dashed $hover-color;
+    }
+}
+
+#container {
+    width: $page-width;
+    margin: 50px auto;
+    min-height: 600px;
+    background: #FFF url(../images/bg.png) no-repeat;
+    @include box-shadow();
+}
+
+.oldie {
+    #container {
+        border: solid 1px lighten(desaturate($symbol-tint, 70%), 50%);
+    }
+}
+
+header {
+    position: relative;
+    font-family: "Averia Libre";
+    margin: 0 $right-margin 0 $left-margin;
+    height: 190px;
+    margin-bottom: 95px;
+    nav {
+        position: absolute;
+        bottom: 5px;
+        ul {
+            clear: left;
+            li {
+                float: left;
+                margin-right: 20px;
+                a {
+                    font-size: 20px;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+    h1, h2 {
+        color: darken($symbol-tint, 5%); 
+        text-align: right;
+    }
+    h1 {
+        padding-top: 20px;
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 30px;       
+    }
+}
+
+#main {
+    margin: 0 $right-margin 0 $left-margin;
+    text-align: justify;
+}
+
+footer {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-right: 0;
+    margin-right: $right-margin;
+    text-align: right;
+    font-size: 50%;
+    color: darken($symbol-tint, 10%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
