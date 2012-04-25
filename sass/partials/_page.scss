@@ -30,9 +30,10 @@ body {
     background-color: #F5FFFE;
 }
 
+$hover-color: desaturate(lighten($symbol-tint, 40%), 50%);
+
 a {
     color: $symbol-tint;
-    $hover-color: desaturate(lighten($symbol-tint, 20%), 50%);
     text-decoration: none;
     &:visited {
         color: darken($symbol-tint, 10%); 
@@ -71,6 +72,9 @@ a {
                     a {
                         font-size: 20px;
                         letter-spacing: 2px;
+                    }
+                    &.current a {
+                        color: desaturate(lighten($symbol-tint, 20%), 50%);
                     }
                 }
             }
@@ -134,6 +138,10 @@ a {
                 font-size: 70%
             }
 
+            section#objective {
+                color: $symbol-tint;
+            }
+
             ul.positions, ul.categories, ul.specializations {
                 list-style: none;
                 padding-left: 0;  
@@ -152,6 +160,14 @@ a {
 
             div, section {
                 margin-bottom: 1em;
+            }
+
+            section {
+                $offset: 10px;
+                margin-left: $offset;
+                & > h1 {
+                    margin-left: -$offset;
+                }
             }
 
             ul.categories {
@@ -174,6 +190,30 @@ a {
                 padding: 0.5em;
                 background: #DDD;
                 border: solid 1px #888;    
+            }
+        }
+    }
+    &.portfolio {
+        $item-spacing: 30px;
+        section.portfolio-item {
+            @include clearfix;
+            h1 {
+                font-family: "Averia Libre";
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+            ul.screenshots {
+                float: left;
+                clear: left;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                margin-bottom: $item-spacing;
+            }
+            div.description {
+                width: 340px;
+                float: left;
+                margin: -10px 0 $item-spacing 20px;
             }
         }
     }
