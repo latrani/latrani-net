@@ -53,62 +53,57 @@ a {
     min-height: 600px;
     @include box-shadow();
 
-    &.base {
-        background: #FFF url(../images/bg2.png) no-repeat;
-        header {
-            position: relative;
-            font-family: "Averia Libre";
-            margin: 0 $right-margin 0 $left-margin;
-            height: 185px;
-            margin-bottom: 110px;
-            nav {
-                position: absolute;
-                bottom: 5px;
-                ul {
-                    clear: left;
-                    li {
-                        float: left;
-                        margin-right: 20px;
-                        a {
-                            font-size: 20px;
-                            letter-spacing: 2px;
-                        }
+    background: #FFF url(../images/bg2.png) no-repeat;
+    header {
+        position: relative;
+        font-family: "Averia Libre";
+        margin: 0 $right-margin 0 $left-margin;
+        height: 185px;
+        margin-bottom: 110px;
+        nav {
+            position: absolute;
+            bottom: 5px;
+            ul {
+                clear: left;
+                li {
+                    float: left;
+                    margin-right: 20px;
+                    a {
+                        font-size: 20px;
+                        letter-spacing: 2px;
                     }
                 }
             }
-            h1, h2 {
-                color: darken($symbol-tint, 5%); 
-                text-align: right;
-            }
-            h1 {
-                padding-top: 20px;
-                font-size: 40px;
-            }
-            h2 {
-                font-size: 30px;       
-            }
         }
-        #main {
-            margin: 0 $right-margin 0 $left-margin;
-            text-align: justify;
-        }
-        footer {
-            padding-top: 20px;
-            padding-bottom: 40px;
-            padding-right: 0;
-            margin-right: $right-margin;
+        h1, h2 {
+            color: darken($symbol-tint, 5%); 
             text-align: right;
+        }
+        h1 {
+            padding-top: 20px;
+            font-size: 40px;
+        }
+        h2 {
+            font-size: 30px;       
+        }
+    }
+    #main {
+        margin: 0 $right-margin 0 $left-margin;
+        text-align: justify;
+    }
+    footer {
+        padding-top: 20px;
+        padding-bottom: 40px;
+        padding-right: 0;
+        margin-right: $right-margin;
+        text-align: right;
+        section#copyright {
             font-size: 50%;
-            color: darken($symbol-tint, 10%);
+            color: darken($symbol-tint, 10%);            
         }
     }
 
     &.resume {
-        background: #FFF;
-        h1, h2, h3, h4 {
-            margin: 0;
-        }
-
         h1 {
             font-family: "Averia Libre";
             font-size: 30px;
@@ -122,20 +117,19 @@ a {
             margin: 0;            
         }
 
-        $margins: 1em 2.5em;
-
         header {
+            address {
+                text-align: right;
+                font-weight: bold;
+            }
             span.street-address, span.tel {
                 display: block;
             }
             span.note {
                 font-size: 70%
             }
-            margin: $margins;
-            padding-top: 1em;
         }
         #main {
-            margin: $margins;
             span.note {
                 font-size: 70%
             }
@@ -163,6 +157,7 @@ a {
             ul.categories {
                 h2 {
                     border-bottom: 1px solid #000;
+                    margin-bottom: 10px;
                 }
                 @include clearfix;
                 & > li {
@@ -172,7 +167,6 @@ a {
             }   
         }
         footer {
-            margin: $margins;
             padding-bottom: 2em;
             section#formats span {
                 font-size: 80%;
@@ -193,4 +187,5 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    font-weight: normal;
 }
