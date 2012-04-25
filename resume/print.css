@@ -1,0 +1,33 @@
+body
+{
+    font-size: 10pt;
+}
+
+a
+{
+    color: black;
+    text-decoration: none;
+}
+
+acronym, abbr
+{
+    text-decoration: none;
+    border: 0;
+}
+
+div#resume
+{
+    margin: 0;
+    width: auto;
+}
+
+div#formats
+{
+    display: none;
+}
+
+div#projects
+{
+    page-break-before: always;
+}
+

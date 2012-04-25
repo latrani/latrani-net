@@ -1,4 +1,5 @@
 @import "compass/css3";
+@import "compass/utilities";
 
 //-----------------------------------------------
 // The following html5-boilerplate styles should
@@ -8,6 +9,7 @@ body, select, input, textarea {
   color: $font-color;
   // Set your base font here, to apply evenly
   // font-family: Georgia, serif;
+  font-family: "Perspective Sans", "Gill Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 //-----------------------------------
@@ -15,17 +17,17 @@ body, select, input, textarea {
 //-----------------------------------
 
 $page-width: 960px;
-$left-margin: 210px;
-$right-margin: 36px;
+$left-margin: 225px;
+$right-margin: 55px;
 
-$symbol-tint: #00675E;
+$symbol-tint: #00998C;
 
 $default-box-shadow-h-offset: 3px;
 $default-box-shadow-v-offset: 3px;
 $default-box-shadow-blur: 10px;
 
 body {
-    background-color: #F5F1E9;
+    background-color: #F5FFFE;
 }
 
 a {
@@ -49,63 +51,144 @@ a {
     width: $page-width;
     margin: 50px auto;
     min-height: 600px;
-    background: #FFF url(../images/bg.png) no-repeat;
     @include box-shadow();
+
+    &.base {
+        background: #FFF url(../images/bg2.png) no-repeat;
+        header {
+            position: relative;
+            font-family: "Averia Libre";
+            margin: 0 $right-margin 0 $left-margin;
+            height: 185px;
+            margin-bottom: 110px;
+            nav {
+                position: absolute;
+                bottom: 5px;
+                ul {
+                    clear: left;
+                    li {
+                        float: left;
+                        margin-right: 20px;
+                        a {
+                            font-size: 20px;
+                            letter-spacing: 2px;
+                        }
+                    }
+                }
+            }
+            h1, h2 {
+                color: darken($symbol-tint, 5%); 
+                text-align: right;
+            }
+            h1 {
+                padding-top: 20px;
+                font-size: 40px;
+            }
+            h2 {
+                font-size: 30px;       
+            }
+        }
+        #main {
+            margin: 0 $right-margin 0 $left-margin;
+            text-align: justify;
+        }
+        footer {
+            padding-top: 20px;
+            padding-bottom: 40px;
+            padding-right: 0;
+            margin-right: $right-margin;
+            text-align: right;
+            font-size: 50%;
+            color: darken($symbol-tint, 10%);
+        }
+    }
+
+    &.resume {
+        background: #FFF;
+        h1, h2, h3, h4 {
+            margin: 0;
+        }
+
+        h1 {
+            font-family: "Averia Libre";
+            font-size: 30px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        ul, p {
+            margin: 0;            
+        }
+
+        $margins: 1em 2.5em;
+
+        header {
+            span.street-address, span.tel {
+                display: block;
+            }
+            span.note {
+                font-size: 70%
+            }
+            margin: $margins;
+            padding-top: 1em;
+        }
+        #main {
+            margin: $margins;
+            span.note {
+                font-size: 70%
+            }
+
+            ul.positions, ul.categories, ul.specializations {
+                list-style: none;
+                padding-left: 0;  
+            }
+
+            p.date, ul.specializations h3
+            {
+                font-style: italic;
+            }
+
+            ul.achievements, ul.skills {
+                list-style: disc;
+                padding-left: 1.5em;
+                margin-bottom: 1em;
+            }
+
+            div, section {
+                margin-bottom: 1em;
+            }
+
+            ul.categories {
+                h2 {
+                    border-bottom: 1px solid #000;
+                }
+                @include clearfix;
+                & > li {
+                    float: left;
+                    padding-right: 2em;
+                }
+            }   
+        }
+        footer {
+            margin: $margins;
+            padding-bottom: 2em;
+            section#formats span {
+                font-size: 80%;
+                font-family: Garamond, Georgia, serif;
+                padding: 0.5em;
+                background: #DDD;
+                border: solid 1px #888;    
+            }
+        }
+    }
 }
 
 .oldie {
     #container {
         border: solid 1px lighten(desaturate($symbol-tint, 70%), 50%);
     }
-}
-
-header {
-    position: relative;
-    font-family: "Averia Libre";
-    margin: 0 $right-margin 0 $left-margin;
-    height: 190px;
-    margin-bottom: 95px;
-    nav {
-        position: absolute;
-        bottom: 5px;
-        ul {
-            clear: left;
-            li {
-                float: left;
-                margin-right: 20px;
-                a {
-                    font-size: 20px;
-                    letter-spacing: 2px;
-                }
-            }
-        }
-    }
-    h1, h2 {
-        color: darken($symbol-tint, 5%); 
-        text-align: right;
-    }
-    h1 {
-        padding-top: 20px;
-        font-size: 40px;
-    }
-    h2 {
-        font-size: 30px;       
-    }
-}
-
-#main {
-    margin: 0 $right-margin 0 $left-margin;
-    text-align: justify;
-}
-
-footer {
-    padding-top: 20px;
-    padding-bottom: 40px;
-    padding-right: 0;
-    margin-right: $right-margin;
-    text-align: right;
-    font-size: 50%;
-    color: darken($symbol-tint, 10%);
 }
 
 h1, h2, h3, h4, h5, h6 {

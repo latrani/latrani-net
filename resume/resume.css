@@ -1,0 +1,100 @@
+body
+{
+    margin: 0;
+    font-family: "Perspective Sans", "Gill Sans", Helvetica, Trebuchet, sans-serif;
+    line-height: 1.4em;
+}
+
+a
+{
+    color: #820;
+}
+
+div#resume
+{
+    margin: 1em;
+    width: 870px;
+}
+
+div#formats
+{
+    margin: 1em;
+    padding-bottom: 1em;
+}
+
+div#formats span
+{
+    font-size: 80%;
+    font-family: Garamond, Georgia, serif;
+    padding: 0.5em;
+    background: #DDD;
+    border: solid 1px #888;    
+}
+
+span.note {
+    font-size: 70%
+}
+
+h1, h2, h3, h4, p, ul
+{
+    margin: 0;
+}
+
+h1, h2, h3, h4
+{
+/*    font-weight: normal;*/
+}
+
+h1, h2
+{
+    margin-bottom: 0.2em; 
+}
+
+h1
+{
+    border-bottom: solid 4px black;   
+}
+
+h2
+{
+    border-bottom: solid 2px black;    
+}
+
+ul.positions, ul.categories, ul.specializations
+{
+    list-style: none;
+    padding-left: 0;  
+}
+
+ul.achievements, ul.skills
+{
+    list-style: disc;
+    padding-left: 1.5em;
+    margin-bottom: 1em;
+}
+
+div
+{
+    margin-bottom: 1em;
+}
+
+ul.categories > li
+{
+    float: left;
+    padding-right: 2em;
+}
+
+p.date, ul.specializations h4
+{
+    font-style: italic;
+}
+
+span.street-address, span.tel
+{
+    display: block;
+}
+
+.section:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.section {display:inline-block;}
+* html .section {height:1%;}
+.section {display:block;}
