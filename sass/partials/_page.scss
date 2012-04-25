@@ -139,7 +139,8 @@ a {
             }
 
             section#objective {
-                color: $symbol-tint;
+                color: darken($symbol-tint, 5%); 
+                font-size: 110%;
             }
 
             ul.positions, ul.categories, ul.specializations {
