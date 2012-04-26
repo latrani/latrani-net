@@ -26,15 +26,15 @@ $ipad-margin: 0 2em;
   $header-height: 155px;
 
   #container {
-      width: 740px;
+      width: 95%;
       margin: 20px auto;
       @include box-shadow();
-      background: #FFF url(../images/bg-thin.png) no-repeat 5px $header-height+5;
+      background: #FFF;
 
       header {
         margin: $ipad-margin;
         height: $header-height;
-        margin-bottom: 80px;
+        margin-bottom: 10px;
         nav {
           ul {
             display: block;
@@ -46,6 +46,8 @@ $ipad-margin: 0 2em;
       }
       #main {
         margin: $ipad-margin;
+        padding-top: 60px;
+        background: #FFF url(../images/bg-thin.png) no-repeat top center;
       }
       footer {
         margin: $ipad-margin;
@@ -62,7 +64,7 @@ $ipad-margin: 0 2em;
   }
 }
 
-@media only screen and (max-width: 740px) {
+@media only screen and (max-width: 600px) {
   /* Style adjustments for viewports 480px and over go here */
   #container {
     width: 100%;
@@ -86,6 +88,8 @@ $ipad-margin: 0 2em;
     }
     #main {
       margin: $ipad-margin;
+      padding-top: 0px;
+      background: none;
     }
     footer {
       margin: $ipad-margin;

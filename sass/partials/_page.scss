@@ -210,12 +210,16 @@ a {
         }
     }
     &.portfolio {
-        $item-spacing: 30px;
+        $item-spacing: 50px;
         section.portfolio-item {
             @include clearfix;
             h1 {
                 font-family: "Averia Libre";
                 font-size: 30px;
+            }
+            h2 {
+                font-family: "Averia Libre";
+                font-size: 25px;
                 margin-bottom: 10px;
             }
             ul.screenshots {
