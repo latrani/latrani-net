@@ -4,14 +4,45 @@
 // Modify as content requires.
 // ========================================================================== */
 
-@media only screen and (min-width: 480px) {
+@media only screen and (max-width: 480px) {
   /* Style adjustments for viewports 480px and over go here */
 
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 1000px) {
   /* Style adjustments for viewports 768px and over go here */
+  $ipad-margin: 0 2em;
 
+  $header-height: 155px;
+
+  #container {
+      width: 740px;
+      margin: 50px auto;
+      @include box-shadow();
+      background: #FFF url(../images/bg-thin.png) no-repeat 5px $header-height+5;
+
+      header {
+        margin: $ipad-margin;
+        height: $header-height;
+        margin-bottom: 80px;
+      }
+      #main {
+        margin: $ipad-margin;
+      }
+      footer {
+        margin: $ipad-margin;
+      }
+
+
+      &.portfolio {
+          section.portfolio-item {
+              div.description {
+                  width: 330px;
+              }
+          }
+      }
+
+  }
 }
 
 
@@ -24,5 +55,58 @@
 @media print {
   @include h5bp-media-print;
   
-  /* Style adjustments for print go here */
+  $print-margin: 4em;
+
+  #container {
+    header {
+      nav {
+        display: none;
+      }
+      margin: 0 $print-margin;
+      height: auto;
+      margin-bottom: 10px;
+      h1, h2 {
+        text-align: left;
+      }
+    }
+    #main {
+      margin: 0 $print-margin;
+    }
+    footer {
+      margin: 0 $print-margin;
+    }
+
+    &.resume {
+      a[href]:after {
+        content: "";
+      }
+      header {
+        address {
+            text-align: left;
+        }
+      }
+
+      #main {
+        ul.categories {
+          h2 {
+            border-bottom: 1px solid #000;
+            margin-bottom: 10px;
+          }
+          @include clearfix;
+          & > li {
+            float: none;
+          }
+        }   
+      }
+
+      footer {
+        display: none;
+      }
+    }
+    footer {
+      a[href]:after {
+        content: "";
+      }
+    }
+  }
 }

@@ -30,6 +30,10 @@ body {
     background-color: #F5FFFE;
 }
 
+span.species {
+    font-style: italic;
+}
+
 $hover-color: desaturate(lighten($symbol-tint, 40%), 50%);
 
 a {
@@ -94,6 +98,17 @@ a {
     #main {
         margin: 0 $right-margin 0 $left-margin;
         text-align: justify;
+        #about {
+            h3 {
+                font-size: 25px;       
+                font-family: "Averia Libre";
+                margin-bottom: 5px;
+                color: darken($symbol-tint, 10%);
+            }
+            p {
+                margin-top: 0px;
+            }            
+        }
     }
     footer {
         padding-top: 20px;
