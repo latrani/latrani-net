@@ -4,20 +4,30 @@
 // Modify as content requires.
 // ========================================================================== */
 
-@media only screen and (max-width: 480px) {
-  /* Style adjustments for viewports 480px and over go here */
 
+$ipad-margin: 0 2em;
+
+@media only screen and (min-width: 1000px) {
+  header {
+    nav {
+      ul {
+        display: block;
+      }
+      select {
+        display: none;
+      }
+    }
+  }
 }
 
+
 @media only screen and (max-width: 1000px) {
-  /* Style adjustments for viewports 768px and over go here */
-  $ipad-margin: 0 2em;
 
   $header-height: 155px;
 
   #container {
       width: 740px;
-      margin: 50px auto;
+      margin: 20px auto;
       @include box-shadow();
       background: #FFF url(../images/bg-thin.png) no-repeat 5px $header-height+5;
 
@@ -25,6 +35,14 @@
         margin: $ipad-margin;
         height: $header-height;
         margin-bottom: 80px;
+        nav {
+          ul {
+            display: block;
+          }
+          select {
+            display: none;
+          }
+        }
       }
       #main {
         margin: $ipad-margin;
@@ -32,7 +50,6 @@
       footer {
         margin: $ipad-margin;
       }
-
 
       &.portfolio {
           section.portfolio-item {
@@ -44,6 +61,48 @@
 
   }
 }
+
+@media only screen and (max-width: 740px) {
+  /* Style adjustments for viewports 480px and over go here */
+  #container {
+    width: 100%;
+    margin: 0;
+    background: #FFF;
+    header {
+      margin: $ipad-margin;
+      height: auto;
+      margin-bottom: 0px;
+      nav {
+        position: relative;
+        margin-top: 30px;
+        text-align: center;
+        ul {
+          display: none;
+        }
+        select {
+          display: inline;
+        }
+      }
+    }
+    #main {
+      margin: $ipad-margin;
+    }
+    footer {
+      margin: $ipad-margin;
+    }
+
+    &.portfolio {
+        section.portfolio-item {
+            div.description {
+                width: 330px;
+            }
+        }
+    }
+  }
+
+
+}
+
 
 
 

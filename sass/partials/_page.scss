@@ -54,7 +54,7 @@ a {
 
 #container {
     width: $page-width;
-    margin: 50px auto;
+    margin: 20px auto;
     min-height: 600px;
     @include box-shadow();
 
@@ -88,7 +88,7 @@ a {
             text-align: right;
         }
         h1 {
-            padding-top: 20px;
+            padding-top: 10px;
             font-size: 40px;
         }
         h2 {
