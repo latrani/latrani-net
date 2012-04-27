@@ -18,7 +18,26 @@ $(function(){
         }
     }).val(window.location.pathname);
 
-    console.log($(".fancybox").fancybox());
+    $("ul.screenshots li:not(:first-child)").hide();
+
+    $(".fancybox").fancybox({
+        loop: false,
+        helpers : {
+            title   : {
+                type: 'outside'
+            },
+            overlay : {
+                opacity : 0.8,
+                css : {
+                    'background-color' : '#000'
+                }
+            },
+            thumbs  : {
+                width   : 50,
+                height  : 50
+            }
+        }
+    });
 });
 
 
