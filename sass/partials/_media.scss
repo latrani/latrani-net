@@ -54,9 +54,10 @@ $ipad-margin: 0 2em;
       }
 
       &.portfolio {
+          margin: 0 auto;
           section.portfolio-item {
               div.description {
-                  width: 330px;
+                  width: 320px;
               }
           }
       }

@@ -17,6 +17,8 @@ $(function(){
             window.location = href;            
         }
     }).val(window.location.pathname);
+
+    console.log($(".fancybox").fancybox());
 });
 
 

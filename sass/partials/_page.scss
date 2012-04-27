@@ -97,14 +97,16 @@ a {
     }
     #main {
         margin: 0 $right-margin 0 $left-margin;
-        text-align: justify;
-        #about {
-            h3 {
-                font-size: 25px;       
-                font-family: "Averia Libre";
-                margin-bottom: 5px;
-                color: darken($symbol-tint, 10%);
-            }
+        h1 {
+            font-family: "Averia Libre";
+            font-size: 30px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        section.home {
             p {
                 margin-top: 0px;
             }            
@@ -123,15 +125,6 @@ a {
     }
 
     &.resume {
-        h1 {
-            font-family: "Averia Libre";
-            font-size: 30px;
-        }
-
-        h2 {
-            font-size: 20px;
-        }
-
         ul, p {
             margin: 0;            
         }
@@ -213,13 +206,7 @@ a {
         $item-spacing: 50px;
         section.portfolio-item {
             @include clearfix;
-            h1 {
-                font-family: "Averia Libre";
-                font-size: 30px;
-            }
             h2 {
-                font-family: "Averia Libre";
-                font-size: 25px;
                 margin-bottom: 10px;
             }
             ul.screenshots {
