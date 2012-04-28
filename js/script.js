@@ -10,29 +10,36 @@ if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) 
     }
 }
 
-Math.nrand = function() {
+// Generate rands with a normal distribution rather than uniform.
+// Code from http://www.colingodsey.com/javascript-gaussian-random-number-generator/
+var nrand = function() {
     var x1, x2, rad, y1;
 
     do {
-        x1 = 2 * this.random() - 1;
-        x2 = 2 * this.random() - 1;
+        x1 = 2 * Math.random() - 1;
+        x2 = 2 * Math.random() - 1;
         rad = x1 * x1 + x2 * x2;
     } while(rad >= 1 || rad === 0);
 
-    var c = this.sqrt(-2 * Math.log(rad) / rad);
+    var c = Math.sqrt(-2 * Math.log(rad) / rad);
 
     return x1 * c;
 };
 
 $(function(){
+
+    // Mobile nav dropdown activation
     $("#mobile-nav").change(function(){
         var href = $(this).val();
         if (href) {
             window.location = href;            
         }
-    }).val(window.location.pathname);
+    }).val(window.location.pathname); // Set initial state to current page
  
-    var spacerRoom = 40;
+    var spacerRoom = 40; // How much breathing room to give the thumbnail area, x and y.
+
+    // Initialzive the fancy portfolio thumbnail expander
+    // Needs to ne down on load rather than ready so that we can properly calculate image heights
     $(window).load(function() {
         $("ul.screenshots").each(function() {
             var $lis = $(this).find("li");
@@ -48,9 +55,10 @@ $(function(){
                 if ($(this).width() > maxWidth) {
                     maxWidth = $(this).width();
                 }
+                // Save expanded and collapsed z indices for ease of twiddling them later
                 $(this).css({'z-index': zlo}).data({"zlo": zlo, "zhi": zhi});
                 if (!$(this).is(":first-child")) {
-                    var angle = Math.nrand() * 3;
+                    var angle = nrand() * 3;
                     $(this).css({
                         '-webkit-transform': 'rotate(' + angle + 'deg)',
                         '-o-transform': 'rotate(' + angle + 'deg)',
@@ -59,7 +67,9 @@ $(function(){
                     });            
                 }
             });
-            $("<div>").addClass("spacer").css({"float": "left"})
+
+            // Add the spacer div, which sits behind the thumbnails to float the text for them.
+            $("<div>").addClass("spacer")
                 .data("height", maxHeight + spacerRoom)
                 .height(maxHeight + spacerRoom)
                 .width(maxWidth + spacerRoom)
@@ -67,10 +77,25 @@ $(function(){
         });
     });
 
-    var collapseHandle;
+    var collapseHandle, collapseFunc = function() {};
 
     $("ul.screenshots").hover(
         function() {
+            var that = this;
+            collapseFunc();
+            // We need to make a closure function here that's responsible for collapsing
+            // that the collapse func call above can use later to clean up if needed.  
+            // Otherwise the previously-expanded one might never get closed.
+            collapseFunc = function() {
+                $(that).find("li").each(function(i) {
+                    $(this).css({"top": 0});
+                    setTimeout(function() {
+                        $(this).css({"z-index": $(this).data("zlo")});
+                    }, 1000);
+                });
+                var oldHeight = $(that).siblings(".spacer").data("height");
+                $(that).siblings(".spacer").height(oldHeight);                
+            };
             clearTimeout(collapseHandle);
             var height = 0;
             $("ul.screenshots li").each(function() {
@@ -83,38 +108,35 @@ $(function(){
             $(this).siblings(".spacer").height(height + spacerRoom);
         },
         function() {
-            var that = this;
-            collapseHandle = setTimeout(function(){
-                $(that).find("li").each(function(i) {
-                    $(this).css({"top": 0});
-                    setTimeout(function() {
-                        $(this).css({"z-index": $(that).data("zlo")});
-                    }, 1000);
-                });
-                var oldHeight = $(that).siblings(".spacer").data("height");
-                $(that).siblings(".spacer").height(oldHeight);                
-            }, 200);
+            // Only collapse if we've been outside the area for a certain time.
+            // Prevents weird wiggles when mousing over small gaps
+            collapseHandle = setTimeout(collapseFunc, 200);
         }
     );
 
-    $(".fancybox").fancybox({
-        loop: false,
-        helpers : {
-            title   : {
-                type: 'outside'
-            },
-            overlay : {
-                opacity : 0.8,
-                css : {
-                    'background-color' : '#000'
+
+    // Only use the lightbox if the screen is fairly wide.  Otherwise the lightboxed images
+    // are tiny, which defeats the purpose.
+    if ($(window).width() > 600) {
+        $(".fancybox").fancybox({
+            loop: false,
+            helpers : {
+                title   : {
+                    type: 'outside'
+                },
+                overlay : {
+                    opacity : 0.8,
+                    css : {
+                        'background-color' : '#000'
+                    }
+                },
+                thumbs  : {
+                    width   : 50,
+                    height  : 50
                 }
-            },
-            thumbs  : {
-                width   : 50,
-                height  : 50
             }
-        }
-    });
+        });        
+    }
 });
 
 

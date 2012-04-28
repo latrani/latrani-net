@@ -226,9 +226,7 @@ a {
                     @include single-transition(top, 0.25s, ease-in-out, false)
                 }
             }
-            div.test {
-                height: 100px;
-                width: 100px;
+            div.spacer {
                 float: left;
             }
             div.description {
