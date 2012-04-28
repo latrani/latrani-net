@@ -206,22 +206,31 @@ a {
         $item-spacing: 50px;
         section.portfolio-item {
             @include clearfix;
+            clear: both;
             h2 {
                 margin-bottom: 10px;
             }
             ul.screenshots {
                 float: left;
-                clear: left;
                 list-style: none;
                 margin: 0;
                 padding: 0;
-                margin-bottom: $item-spacing;
+                li {
+                    display: none
+                }
             }
             div.description {
-                width: 340px;
-                float: left;
-                margin: -10px 0 $item-spacing 20px;
+                margin: 0 0 $item-spacing 20px;
             }
+        }
+    }
+}
+
+.no-js {
+    ul.screenshots {
+        li {
+            margin-right: 10px;
+            display: block !important;
         }
     }
 }

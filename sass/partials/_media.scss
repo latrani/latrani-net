@@ -8,13 +8,15 @@
 $ipad-margin: 0 2em;
 
 @media only screen and (min-width: 1000px) {
-  header {
-    nav {
-      ul {
-        display: block;
-      }
-      select {
-        display: none;
+  #container {
+    header {
+      nav {
+        ul {
+          display: block;
+        }
+        select {
+          display: none;
+        }
       }
     }
   }
@@ -52,16 +54,6 @@ $ipad-margin: 0 2em;
       footer {
         margin: $ipad-margin;
       }
-
-      &.portfolio {
-          margin: 0 auto;
-          section.portfolio-item {
-              div.description {
-                  width: 320px;
-              }
-          }
-      }
-
   }
 }
 
@@ -95,17 +87,15 @@ $ipad-margin: 0 2em;
     footer {
       margin: $ipad-margin;
     }
-
     &.portfolio {
         section.portfolio-item {
-            div.description {
-                width: 330px;
-            }
+          ul.screenshots {
+            float: none;
+          }
         }
     }
+
   }
-
-
 }
 
 

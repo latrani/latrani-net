@@ -17,8 +17,12 @@ $(function(){
             window.location = href;            
         }
     }).val(window.location.pathname);
-
-    $("ul.screenshots li:not(:first-child)").hide();
+ 
+    $("ul.screenshots").find("li:first-child").each(function(){
+        var $img = $(this).find("img");
+        var src = $img.attr("src");
+        $img.attr("src", src.replace("-1", ""));
+    }).show();
 
     $(".fancybox").fancybox({
         loop: false,
