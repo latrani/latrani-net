@@ -205,19 +205,31 @@ a {
     &.portfolio {
         $item-spacing: 50px;
         section.portfolio-item {
-            @include clearfix;
             clear: both;
+            position: relative;                
             h2 {
                 margin-bottom: 10px;
             }
             ul.screenshots {
-                float: left;
+                position: relative;    
+                top: 10px;
+                left: 10px;            
                 list-style: none;
                 margin: 0;
                 padding: 0;
                 li {
-                    display: none
+                    // display: none
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    @include box-shadow;
+                    @include single-transition(top, 0.25s, ease-in-out, false)
                 }
+            }
+            div.test {
+                height: 100px;
+                width: 100px;
+                float: left;
             }
             div.description {
                 margin: 0 0 $item-spacing 20px;
@@ -227,9 +239,16 @@ a {
 }
 
 .no-js {
+    $item-spacing: 50px;
     ul.screenshots {
+        float: left !important;
+        margin-right: 20px !important;
+        margin-bottom: $item-spacing !important;
+
         li {
-            margin-right: 10px;
+            position: static !important;
+            margin-right: 10px !important;
+            margin-bottom: 10px !important;
             display: block !important;
         }
     }
