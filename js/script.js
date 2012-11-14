@@ -94,9 +94,11 @@ $(function(){
                     }, 1000);
                 });
                 var oldHeight = $(that).siblings(".spacer").data("height");
-                $(that).siblings(".spacer").height(oldHeight);                
+                $(that).siblings(".spacer").height(oldHeight);
+                // $.scrollTo($(that).parent(), 200);
             };
             clearTimeout(collapseHandle);
+            // $.scrollTo($(that).parent(), 200);
             var height = 0;
             $("ul.screenshots li").each(function() {
                 $(this).css({"z-index": $(this).data("zlo")});
