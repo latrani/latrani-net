@@ -58,7 +58,7 @@ $(function(){
                 // Save expanded and collapsed z indices for ease of twiddling them later
                 $(this).css({'z-index': zlo}).data({"zlo": zlo, "zhi": zhi});
                 if (!$(this).is(":first-child")) {
-                    var angle = nrand() * 3;
+                    var angle = nrand() * 4;
                     $(this).css({
                         '-webkit-transform': 'rotate(' + angle + 'deg)',
                         '-o-transform': 'rotate(' + angle + 'deg)',
@@ -137,7 +137,27 @@ $(function(){
                     height  : 50
                 }
             }
+        });
+        $(".fancybox-iframe").fancybox({
+            loop: false,
+            type: "iframe",
+            helpers : {
+                title   : {
+                    type: 'outside'
+                },
+                overlay : {
+                    opacity : 0.8,
+                    css : {
+                        'background-color' : '#000'
+                    }
+                },
+                thumbs  : {
+                    width   : 50,
+                    height  : 50
+                }
+            }
         });        
+
     }
 });
 
