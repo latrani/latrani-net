@@ -15,7 +15,7 @@ MY POSITIONS
 ### Front-End Engineer, Amobee
 May 2012 -- Current
 
-* Designed AdKit XML, a domain-specific dialect for easy development of interactive rich-media presentations
+* Designed AdKit XML, a domain-specific dialect for easy development of interactive rich-media presentations.
 * Led development of AdKit web renderer, a JavaScript- and WebKit-based mobile page layout engine.
 * Integrated web renderer with native OpenGL layer, allowing one XML layout to render interactive 3D alongside web content.
 
@@ -45,14 +45,6 @@ September 2004 -- July 2008
 * Introduced next-generation technologies like AJAX and jQuery to enable more efficient development and more responsive interfaces.
 
 
-### Teaching Assistant, New Mexico Institute of Mining and Technology
-January 2004 -- May 2004
-
-* Guided large classroom discussions.
-* Graded student assignments.
-* Developed Python and MySQL-based grade manager system.
-
-
 MY PROJECTS
 -----------
 ### Fandom Convention Scheduling Web Application
@@ -61,7 +53,7 @@ January 2011 -- Current
 * Designed and built a full-featured site for presenters and attendees.
 * Created a dynamic cross-platform mobile site.
 * Developed as an open-source project using GitHub and Lighthouse.
-* Launched at an event with 3000 attendees, with more planned in the future.
+* Launched at an event with 3000 attendees, with more events planned in the future.
 
 ### User Interface Design Academic Project, New Mexico Institute of Mining and Technology
 September 2003 -- May 2004
