@@ -1,10 +1,11 @@
-// Fix iPad's tendency to scale up when rotating.  
+// Fix iPad's tendency to scale up when rotating.
 // Code from http://stackoverflow.com/questions/5434656/ipad-layout-scales-up-when-rotating-from-portrait-to-landcape
 if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
     var viewportmeta = document.querySelector('meta[name="viewport"]');
     if (viewportmeta) {
         viewportmeta.content = 'width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0';
         document.body.addEventListener('gesturestart', function () {
+            "use strict";
             viewportmeta.content = 'width=device-width, minimum-scale=0.25, maximum-scale=1.6';
         }, false);
     }
@@ -13,6 +14,7 @@ if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) 
 // Generate rands with a normal distribution rather than uniform.
 // Code from http://www.colingodsey.com/javascript-gaussian-random-number-generator/
 var nrand = function() {
+    "use strict";
     var x1, x2, rad, y1;
 
     do {
@@ -27,15 +29,33 @@ var nrand = function() {
 };
 
 $(function(){
+    "use strict";
+
+    // Email obfuscation
+    var cypher = "3ECC@NECwEhn.h5C",
+        key = "RKBt1oiZTOQaI2Xwklc0fmDgsuCFHnPzYjEAeb6WNUy7348qMpVShdr9GJL5xv",
+        plain = "", email = "";
+
+    $.each(cypher, function(index, value){
+      if (key.indexOf(value) === -1) {
+        plain += value;
+      } else {
+        plain += key.charAt((key.indexOf(value) - (cypher.length + 7) + key.length) % key.length);
+      }
+    });
+
+    email = '<a class="email" href="mailto:' + plain + '">' + plain + '</a>';
+    $("#email").append(email);
+
 
     // Mobile nav dropdown activation
     $("#mobile-nav").change(function(){
         var href = $(this).val();
         if (href) {
-            window.location = href;            
+            window.location = href;
         }
     }).val(window.location.pathname); // Set initial state to current page
- 
+
     var spacerRoom = 40; // How much breathing room to give the thumbnail area, x and y.
 
     // Initialzive the fancy portfolio thumbnail expander
@@ -64,7 +84,7 @@ $(function(){
                         '-o-transform': 'rotate(' + angle + 'deg)',
                         '-moz-transform': 'rotate(' + angle + 'deg)',
                         '-ms-transform': 'rotate(' + angle + 'deg)'
-                    });            
+                    });
                 }
             });
 
@@ -84,7 +104,7 @@ $(function(){
             var that = this;
             collapseFunc();
             // We need to make a closure function here that's responsible for collapsing
-            // that the collapse func call above can use later to clean up if needed.  
+            // that the collapse func call above can use later to clean up if needed.
             // Otherwise the previously-expanded one might never get closed.
             collapseFunc = function() {
                 $(that).find("li").each(function(i) {
@@ -156,7 +176,7 @@ $(function(){
                     height  : 50
                 }
             }
-        });        
+        });
 
     }
 });
