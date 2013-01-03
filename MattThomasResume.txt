@@ -2,23 +2,32 @@ Matthew Thomas
 ==============
 10737 Roosevelt Way NE, Apt. 8
 Seattle, WA 98125
-480-269-6871 (Google Voice)                               
+480-269-6871 (Google Voice)
 
 
-OBJECTIVE
----------
-To develop web front-ends that are exciting, expressive, and easy to use.
-
-
-EXPERIENCE
+MY PASSION
 ----------
-### Web Development Engineer, Cooliris
-April 2009 -- Current
+Creating web-based user experiences that are exciting, expressive, and easy to use.
 
-* Developed JavaScript library for rendering domain-specific layout XML to the web.
+
+MY POSITIONS
+------------
+### Front-End Engineer, Amobee
+May 2012 -- Current
+
+* Designed AdKit XML, a domain-specific dialect for easy development of interactive rich-media presentations
+* Led development of AdKit web renderer, a JavaScript- and WebKit-based mobile page layout engine.
+* Integrated web renderer with native OpenGL layer, allowing one XML layout to render interactive 3D alongside web content.
+
+
+### Web Development Engineer, Cooliris
+April 2009 -- May 2012
+
 * Built innovative and performant web UIs using JavaScript and diverse web frameworks.
 * Integrated multiple platforms and APIs into one seamless web app interface.
 * Created tools and documentation for coworkers, partners and outside developers.
+* Helped start the Adjitsu team, developing rich-media ad experiences that led the team to be acquired by Amobee.
+
 
 ### Front-End Engineer, Replicate Technologies
 July 2008 -- February 2009
@@ -27,12 +36,14 @@ July 2008 -- February 2009
 * Wrote Pylons layer to transform PostgreSQL data into JSON format using flexible table-based metadata.
 * Built complex desktop-style UI using ExtJS and AJAX, including configuration wizards and interactive reports.
 
+
 ### Software Engineer, NewlineNoosh
 September 2004 -- July 2008
 
 * Created custom web application interfaces using HTML and JavaScript to meet the needs of individual clients.
 * Extended Java back-end to support data integration with remote systems and add new general application features.
 * Introduced next-generation technologies like AJAX and jQuery to enable more efficient development and more responsive interfaces.
+
 
 ### Teaching Assistant, New Mexico Institute of Mining and Technology
 January 2004 -- May 2004
@@ -42,15 +53,15 @@ January 2004 -- May 2004
 * Developed Python and MySQL-based grade manager system.
 
 
-PROJECTS
---------
+MY PROJECTS
+-----------
 ### Fandom Convention Scheduling Web Application
-January 2011 - Current
+January 2011 -- Current
 
 * Designed and built a full-featured site for presenters and attendees.
 * Created a dynamic cross-platform mobile site.
 * Developed as an open-source project using GitHub and Lighthouse.
-* Launched at an event with 3000 attendees, with more planned in 2012.
+* Launched at an event with 3000 attendees, with more planned in the future.
 
 ### User Interface Design Academic Project, New Mexico Institute of Mining and Technology
 September 2003 -- May 2004
@@ -67,48 +78,37 @@ January 2003 -- May 2003
 * Designed and programmed game user interface.
 
 
-EDUCATION
----------
+MY EDUCATION
+------------
 ### 1999 -- 2004: New Mexico Institute of Mining and Technology
 Dual Bachelor of Science degrees in Computer Science and Information Technology
 
 
-SKILLS
-------
-* Web Development
+MY SKILLS
+---------
+* Web Technologies
     * Front-end
         * HTML
-        * CSS
-        * SASS
-        * JavaScript (jQuery, jQuery UI, ExtJS)
-        * AJAX
-        * JSON
+        * CSS & SASS
+        * JavaScript
+        * jQuery & jQuery UI
+        * Underscore.js & Backbone.js
     * Back-end
         * Pyramid/Pylons (Python)
+        * Google App Engine (Python)
         * Ruby on Rails
-        * Java Servlets (J2EE)
+        * Data Model Design
+        * SQL (MySQL, PostgreSQL)
 
-* Software Engineering
+* Design & Development
     * UI/UX
+        * Persona Research
         * Wireframing
+        * Functional Prototyping
         * User Testing
-        * Implementation
-    * Programming Languages
-        * Python
-        * Java
-        * C/C++
-        * Ruby
-    * Databases
-        * Normalization
-        * Model design
-        * SQL (PostgreSQL, MySQL)
-
-* Development Tools
-    * Version Control
-        * svn
-        * hg
-        * git
-    * Operating Systems
-        * OS X
-        * Linux
-        * Windows
+        * Agile Iteration
+    * Development Tools
+        * Balsamiq, Omnigraffle
+        * Photoshop, Acorn, Pixelmator
+        * svn, hg, git
+        * OS X, Linux
